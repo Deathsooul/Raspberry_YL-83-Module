@@ -1,13 +1,16 @@
-from time import sleep          
-import RPi.GPIO as GPIO         
- 
-GPIO.setmode(GPIO.BCM)          
-INPUT_PIN = 17           
-GPIO.setup(INPUT_PIN, GPIO.IN)           
+# raindrop sensor DO connected to GPIO18
+# HIGH = no rain, LOW = rain detected
+from time import sleep
+from gpiozero import Buzzer, InputDevice
 
-while True: 
-           if (GPIO.input(INPUT_PIN) == True): # Physically read the pin now
-                    print(GPIO.input(INPUT_PIN))
-           else:
-                    print('0')
-           sleep(1);           
+no_rain = InputDevice(18)
+ 
+def alertfunc(iterations):
+    for x in range(iterations):
+        print("Deu boa, detectamos chuva")
+ 
+while True:
+    if not no_rain.is_active:
+        print("It's raining!!")
+        alertfunc(3)
+    sleep(1)

@@ -1,7 +1,7 @@
 # raindrop sensor DO connected to GPIO18
 # HIGH = no rain, LOW = rain detected
 from time import sleep
-from gpiozero import Buzzer, InputDevice
+from gpiozero import InputDevice
 
 no_rain = InputDevice(17)
  

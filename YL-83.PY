@@ -3,7 +3,7 @@
 from time import sleep
 from gpiozero import Buzzer, InputDevice
 
-no_rain = InputDevice(18)
+no_rain = InputDevice(17)
  
 def alertfunc(iterations):
     for x in range(iterations):

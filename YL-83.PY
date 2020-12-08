@@ -7,10 +7,10 @@ no_rain = InputDevice(17)
  
 def alertfunc(iterations):
     for x in range(iterations):
-        print("Deu boa, detectamos chuva")
+        print("Aleluia...")
  
 while True:
     if not no_rain.is_active:
-        print("It's raining!!")
+        print("It's raining man!!")
         alertfunc(3)
     sleep(1)
